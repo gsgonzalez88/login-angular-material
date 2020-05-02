@@ -3,14 +3,14 @@
     <mat-icon class="home" routerLink="/">home</mat-icon>
     <nav>
       <ul>
-        <li><button id="signup-button" mat-raised-button color="warn" routerLink="/register">SIGN UP</button></li>
+        <li><button id="signup-button" mat-raised-button color="warn" routerLink="/auth">SIGN IN</button></li>
       </ul>
     </nav>
   </div>
 </div>
 <div class="container-form">
   <h1>
-    Login Page!
+    Register Page!
   </h1>
   <form class="example-form">
     <mat-form-field class="example-full-width">
@@ -19,6 +19,10 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Password</mat-label>
+      <input matInput type="password">  
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Confirm Password</mat-label>
       <input matInput type="password">  
     </mat-form-field>
     <button mat-raised-button color="warn">login</button>
