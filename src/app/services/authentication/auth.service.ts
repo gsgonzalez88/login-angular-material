@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService {
@@ -8,6 +7,19 @@ export class AuthService {
 
   constructor( private http: HttpClient) { 
 
+  }
+
+  login(credentials) {
+    return this.http.post('/api/authenticate', JSON.stringify(credentials));
+      
+  }
+
+  logout() {
+
+  }
+
+  isLoggedIn(){
+    return false;
   }
 
 }
