@@ -3,7 +3,7 @@
   <h1>
     Login Page!
   </h1>
-  <form class="example-form">
+  <form class="example-form" #f="ngForm" (ngSubmit)="signIn(f.value)">
     <mat-form-field class="example-full-width">
       <mat-label>Email</mat-label>
       <input matInput  placeholder="Ex. pat@example.com">      
@@ -12,6 +12,7 @@
       <mat-label>Password</mat-label>
       <input matInput type="password">  
     </mat-form-field>
-    <button mat-raised-button color="warn">login</button>
+    <div *ngIf="invalidLogin">Invalid username and/or password</div>
+    <button mat-raised-button color="warn" type="submit">login</button>
   </form>  
 </div>
