@@ -12,6 +12,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/authentication/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SuccessComponent } from './pages/success.component'
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     PrivateComponent,
     SignupComponent,
-    NavBarComponent
+    NavBarComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SuccessComponent]
 })
 export class AppModule { }
