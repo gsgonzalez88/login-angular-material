@@ -1,29 +1,14 @@
 <app-nav-bar></app-nav-bar>
-<div class="container-form">
-  <h1>
-    Login Page!
-  </h1>
- <!--  <form class="example-form" #f="ngForm" (ngSubmit)="signIn(f.value)">
-    <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
-      <input matInput  placeholder="Ex. pat@example.com">      
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input matInput type="password">  
-    </mat-form-field>
-    <div *ngIf="invalidLogin">Invalid username and/or password</div>
-    <button mat-raised-button color="warn" type="submit">login</button>
-  </form>   -->
-  <form  #f="ngForm" (ngSubmit)="signIn(f.value)">
-    <h2 >Please sign in</h2>
-    <div *ngIf="invalidLogin" >Invalid username and/or password.</div>
-    <label for="inputEmail" >Email address</label>
-    <input type="email" id="inputEmail" name="email" ngModel class="form-control" placeholder="Email address" required
-      autofocus>
-    <label for="inputPassword" >Password</label>
-    <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Password"
-      required>
-    <button  type="submit">Sign in</button>
-  </form>
+<div fxLayout="column" fxLayoutAlign="center center">
+<section class="login-box">
+    <form  #f="ngForm" (ngSubmit)="signIn(f.value)" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <h2>Please sign in</h2>
+      <div *ngIf="invalidLogin" >Invalid username and/or password.</div>
+      <input type="email" id="inputEmail" name="email" ngModel class="form-control" placeholder="Email address" required
+        autofocus>
+      <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Password"
+        required>
+      <button mat-raised-button [disabled]="f.invalid"  type="submit">Sign in</button>
+    </form>
+</section>
 </div>

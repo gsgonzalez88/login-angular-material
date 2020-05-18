@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/authentication/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SuccessComponent } from './pages/success.component'
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SuccessComponent } from './pages/success.component'
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
