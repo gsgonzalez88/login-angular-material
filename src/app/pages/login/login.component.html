@@ -8,7 +8,12 @@
         autofocus>
       <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Password"
         required>
-      <button mat-raised-button [disabled]="f.invalid"  type="submit">Sign in</button>
+      <button mat-raised-button style="width: 185px" [disabled]="f.invalid" type="submit">Sign in</button>      
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 220px">
+        <mat-checkbox [labelPosition]="after" style="font-size: 11px;">Remember me</mat-checkbox>
+        <a href="" style="font-size: 11px;">Forgot your password?</a>
+      </div>
+      <a routerLink="/register">create an account</a>
     </form>
-</section>
+  </section>
 </div>
