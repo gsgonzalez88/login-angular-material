@@ -1,21 +1,21 @@
 <app-nav-bar></app-nav-bar>
-<div class="container-form">
-  <h1>
-    Register Page!
-  </h1>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
-      <input matInput  placeholder="Ex. pat@example.com">      
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input matInput type="password">  
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Confirm Password</mat-label>
-      <input matInput type="password">  
-    </mat-form-field>
-    <button mat-raised-button color="warn">register</button>
-  </form>  
+<div fxLayout="column" fxLayoutAlign="center center">
+  <section class="login-box">
+    <form #f="ngForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <h2>Welcome</h2>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput  placeholder="Ex. pat@example.com">      
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password">  
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password">  
+      </mat-form-field>
+      <button mat-raised-button color="warn">register</button>
+    </form> 
+  </section>
 </div>
