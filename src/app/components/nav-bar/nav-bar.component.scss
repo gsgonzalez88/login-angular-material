@@ -1,34 +1,33 @@
 .container {
     width: 100%;
     height: 60px;
-    margin: 0 auto;
     position: fixed;   
-    bottom: 0%;
-    background-color: #B52E31;
+    bottom: 0px;
+    /* background-color: #B52E31; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
 
-button {
+/* button {
     color: black !important;
     background-color: white !important;
 }
 
 .header {
     background-color: #B52E31;
-}
+} */
 
-.header::after {
+/* .header::after {
     content: '';
     display: table;
     clear: both;
 }
-
-.mat-icon {
+ */
+/* .mat-icon {
     font-size: 36px;
-}
+} */
 
 /* nav {
     float: right;
