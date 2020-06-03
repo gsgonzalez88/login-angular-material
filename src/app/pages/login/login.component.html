@@ -1,14 +1,13 @@
-<app-nav-bar></app-nav-bar>
-<div fxLayout="column" fxLayoutAlign="center center">
-<section class="login-box">
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+  <section class="login-box">
     <form  #f="ngForm" (ngSubmit)="signIn(f.value)" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
       <h2>Please sign in</h2>
       <div *ngIf="invalidLogin" >Invalid username and/or password.</div>
       <input type="email" id="inputEmail" name="email" ngModel class="form-control" placeholder="Email address" required
-        autofocus>
+      autofocus>
       <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Password"
-        required>
-        <mat-checkbox [labelPosition]="after" style="font-size: 11px;">Remember me</mat-checkbox>
+      required>
+      <mat-checkbox [labelPosition]="after" style="font-size: 11px;">Remember me</mat-checkbox>
       <button mat-raised-button style="width: 185px" [disabled]="f.invalid" type="submit">Sign in</button>      
       <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 220px">
         <a href="" style="font-size: 11px;">Forgot your password?</a>

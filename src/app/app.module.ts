@@ -7,7 +7,7 @@ import { MaterialModule } from './material.module';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PrivateComponent } from './pages/private/private.component';
-import { SignupComponent } from './pages/signup/signup.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/authentication/auth.service';
@@ -22,7 +22,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeComponent,
     LoginComponent,
     PrivateComponent,
-    SignupComponent,
+    RegisterComponent,
     NavBarComponent,
     SuccessComponent
   ],
