@@ -12,7 +12,6 @@ import { SuccessComponent } from '../success.component'
 export class LoginComponent implements OnInit {
 
   invalidLogin: boolean = false;
-  isMobile: boolean = false;
 
   constructor(
     private router: Router, 
@@ -21,10 +20,10 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.isMobile = true;
   }
 
   signIn(credentials) {
+    console.log(credentials);
     this.dialog.open(SuccessComponent)
     this.authService.login(credentials)    
   }
