@@ -12,6 +12,7 @@ import { SuccessComponent } from '../success.component'
 export class LoginComponent implements OnInit {
 
   invalidLogin: boolean = false;
+  hide: boolean = true;
 
   constructor(
     private router: Router, 
