@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/authentication/auth.service';
 import { MatDialog } from '@angular/material';
 import { SuccessComponent } from '../success.component'
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -23,10 +24,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  signUp(form){
+    
+    if(form.invalid){
+      console.log('invalid', form.invalid)
+      return;
+    }
+    this.authService.createUser(form.value.email, form.value.password);
+  }
+
   signIn(credentials) {
-    console.log(credentials);
-    this.dialog.open(SuccessComponent)
-    this.authService.login(credentials)    
+    console.log(credentials);   
   }
 
 }
