@@ -1,24 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { AuthData } from './auth-data.model';
 
 @Injectable()
-export class AuthService {  
-  constructor( private http: HttpClient, private router: Router) { 
+export class AuthService {
+  constructor(private http: HttpClient) {}
 
-  }
+  createUser(email: string, password: string) {
+    const authData: AuthData = {
+      email: email,
+      password: password
+    };
 
-  login(credentials) { 
-    this.http.post('http://localhost:3000/api/authenticate', credentials)
-    .subscribe(data => {
-      if(data){
-        this.router.navigate(['/private']);
-      } else {
-        this.router.navigate(['/'])
-      }      
+    this.http.post('http://localhost:3000/api/user/signup', authData)
+    .subscribe(response => {
+      console.log(response);
     })
   }
-  
 
 }
