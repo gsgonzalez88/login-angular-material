@@ -5,7 +5,8 @@
     align-items: center;
 }
 
-.example-form {
+@media (max-width: 768px) {
+  .example-form {
     min-width: 150px;
     max-width: 500px;
     width: 50%;
@@ -21,4 +22,4 @@
     margin: 5%;
     padding: 10px;
   }
-  
+}
