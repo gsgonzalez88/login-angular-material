@@ -5,20 +5,34 @@
       #f="ngForm"
       (ngSubmit)="signIn(f.value)"
       fxLayout="column"
-      fxLayoutAlign="center center"      
+      fxLayoutAlign="center center"
       fxLayoutGap="20px"
     >
       <h2>Please sign in</h2>
       <div *ngIf="invalidLogin">Invalid username and/or password.</div>
       <mat-form-field style="width: 204px;">
         <mat-label>Email</mat-label>
-        <input matInput required ngModel name="email">
+        <input matInput required ngModel name="email" email required #emailInput="ngModel" />
+        <mat-error *ngIf="!emailInput.hasError('required')" >Email is invalid</mat-error>
+        <mat-error *ngIf="emailInput.hasError('required')">Field must no be empty</mat-error>
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field hintLabel="Should be at least 6 characters long">
         <mat-label>Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" required ngModel name="password">
-        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </mat-form-field>      
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          required
+          ngModel
+          name="password"
+          required
+          minlength="6"
+          #pwInput="ngModel"
+        />
+        <mat-hint align="end">{{ pwInput.value?.length}}/6 </mat-hint>
+        <mat-icon matSuffix (click)="hide = !hide">{{
+          hide ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </mat-form-field>
       <mat-checkbox [labelPosition]="after" style="font-size: 11px;"
         >Remember me</mat-checkbox
       >
@@ -30,10 +44,7 @@
       >
         Sign in
       </button>
-      <div
-        fxLayout="row"
-        fxLayoutAlign="center"        
-      >
+      <div fxLayout="row" fxLayoutAlign="center">
         <a href="" style="font-size: 11px;">Forgot your password?</a>
       </div>
       <a routerLink="/register">Register</a>
